@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkgalaxyphone"]=self["webpackChunkgalaxyphone"]||[]).push([[443],{9030:function(e,n,t){t.r(n),t.d(n,{default:function(){return c}});var a=function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},u=[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",{staticClass:"about"},[t("h1",[e._v("This is an about page")])])}],l=t(1001),s={},r=(0,l.Z)(s,a,u,!1,null,null,null),c=r.exports}}]);
+//# sourceMappingURL=about.06cbbd05.js.map
