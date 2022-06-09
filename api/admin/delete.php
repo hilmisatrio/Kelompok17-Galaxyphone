@@ -1,0 +1,33 @@
+<?php 
+  // Headers
+  header('Access-Control-Allow-Origin: *');
+  header('Content-Type: application/json');
+  header('Access-Control-Allow-Methods: DELETE');
+  header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
+
+  include_once '../../config/Database.php';
+  include_once '../../models/Admin.php';
+
+  // Instantiate DB & connect
+  $database = new Database();
+  $db = $database->connect();
+
+  // Instantiate blog admin object
+  $admin = new Admin($db);
+
+  // Get raw admined data
+  $data = json_decode(file_get_contents("php://input"));
+
+  // Set ID to update
+  $admin->id = $data->id;
+
+  // Delete admin
+  if($admin->delete()) {
+    echo json_encode(
+      array('message' => 'admin Deleted')
+    );
+  } else {
+    echo json_encode(
+      array('message' => 'admin Not Deleted')
+    );
+  }
